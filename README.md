@@ -1,4 +1,4 @@
-# On-Premises SQL Server to Azure SQL Database Migration (Project 1)
+# On-Premises SQL Server to Azure SQL Database Migration
 
 ## 1. Project Overview
 
