@@ -35,20 +35,8 @@ There is **no separate validation pipeline** in this project. Validation is perf
 
 ## 5. Architecture Diagram
 
-```mermaid
-flowchart TD
-    A["On-Prem SQL Server<br/>MigrationSourceDB"] --> B["Self-Hosted IR<br/>(SHIR-Local)"]
-    B --> C["Azure Data Factory"]
-    C --> D["Full Load"]
-    C --> E["Watermark<br/>Incremental Load"]
-    C --> F["CDC Load"]
-    D --> G["Azure SQL Database<br/>SalesDB"]
-    E --> G
-    F --> G
-    G --> H["stg schema<br/>(staging tables)"]
-    G --> I["dbo tables<br/>(final/serving)"]
-    G --> J["dbo.ETL_Control<br/>(checkpoints)"]
-```
+<img width="1205" height="1226" alt="Architecture_diagram" src="https://github.com/user-attachments/assets/48ef78f2-503b-4d49-822b-e7b233a6a54c" />
+
 
 - ADF is the ingestion/migration engine for this project.
 - SHIR bridges ADF to the on-prem SQL Server — Azure cannot reach it directly.
